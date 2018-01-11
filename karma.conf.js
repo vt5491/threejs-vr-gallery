@@ -12,6 +12,9 @@ module.exports = function (config) {
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
+    //vt add
+    customContextFile: './src/environments/context_aframe_ut.html',
+    //vt end
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
