@@ -5,18 +5,21 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
-import { VrGalleryComponent } from './vr-gallery/vr-gallery.component';
+import { VrGalleryComponent } from './components/vr-gallery/vr-gallery.component';
+import { PlaneSelectComponent } from './components/plane-select/plane-select.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
  {path: 'vr-gallery', component: VrGalleryComponent},
+ {path: 'plane-select', component: PlaneSelectComponent},
 ]
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VrGalleryComponent
+    VrGalleryComponent,
+    PlaneSelectComponent
   ],
   imports: [
     BrowserModule,
