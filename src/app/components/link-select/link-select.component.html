@@ -1,0 +1,28 @@
+<a-scene id="link-select-scene">
+  <a-assets>
+    <img id="cokeThumbnail" src="assets/img/coke-label.jpg">
+    <a-asset-item id="cubeExample"
+      src="assets/threejs-env/examples/vrize_webgl_geometry_cube.html"></a-asset-item>
+  </a-assets>
+  <a-entity id="dolly" position="0 0 3" wasd-controls>
+    <a-camera near="0.1" user-height="0" position="0 0 0" id="camera" ></a-camera>
+    <!-- <a-entity hand-controls="left" position="-0.1 -0.2 0" ></a-entity> -->
+    <a-entity oculus-touch-controls="hand: left" position="-0.1 -0.2 0"></a-entity>
+    <!-- <a-entity hand-controls="right" position="0.1 -0.2 0"></a-entity> -->
+    <a-entity laser-controls="hand: right" position="0.1 -0.2 0"></a-entity>
+  </a-entity>
+  <!-- <a-plane color="#0CC" height="20" width="20" position="0 0 0"
+    material="side: double"
+  >
+  </a-plane> -->
+  <a-link href="plane-select" title="Plane"
+    image="#cokeThumbnail" position="-4 0 0"></a-link>
+  <!-- this actually works -->
+  <!-- <a-link href="http://www.google.com" title="Test"
+    image="#cokeThumbnail" position="0 0 0"></a-link> -->
+  <!-- <a-link href="http://192.168.50.91:8000/examples/vrize_webgl_geometry_cube.html" title="Test"
+    image="#cokeThumbnail" position="0 0 0"></a-link> -->
+  <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html" title="Test2"
+    image="#cokeThumbnail" position="0 0 0"></a-link>
+  <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+</a-scene>

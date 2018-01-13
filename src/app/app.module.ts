@@ -7,19 +7,24 @@ import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import { VrGalleryComponent } from './components/vr-gallery/vr-gallery.component';
 import { PlaneSelectComponent } from './components/plane-select/plane-select.component';
+import { LinkSelectComponent } from './components/link-select/link-select.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
  {path: 'vr-gallery', component: VrGalleryComponent},
  {path: 'plane-select', component: PlaneSelectComponent},
+ {path: 'link-select', component: LinkSelectComponent},
+//  {path: 'g1', url: 'http://www.google.com'},
+//  {path: 'g1', redirectTo: 'http://www.google.com'},
+// {url: 'www.google.com'}
 ]
-
 
 @NgModule({
   declarations: [
     AppComponent,
     VrGalleryComponent,
-    PlaneSelectComponent
+    PlaneSelectComponent,
+    LinkSelectComponent
   ],
   imports: [
     BrowserModule,
