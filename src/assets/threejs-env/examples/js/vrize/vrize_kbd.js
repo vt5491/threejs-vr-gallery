@@ -24,4 +24,8 @@ function onDocumentKeyDown(event) {
         window.location.href='http://192.168.50.91:4200/assets/threejs-env/examples/vrize_webgl_geometries.html';
         // window.location.href='assets/threejs-env/examples/vrize_webgl_geometries.html';
     }
+    else if (keyCode == 66){
+      console.log(`vrize_kbd: now going back from whence we came`);
+      window.history.back();
+    }
 };

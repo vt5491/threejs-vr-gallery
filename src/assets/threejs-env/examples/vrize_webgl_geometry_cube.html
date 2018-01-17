@@ -1,4 +1,5 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--vrize conversion performed on Tue Jan 09 2018 21:43:35 GMT-0800 (Pacific Standard Time)--><head>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><!--vrize conversion performed on Tue Jan 16 2018 20:36:31 GMT-0800 (Pacific Standard Time)--><head>
 		<title>three.js webgl - geometry - cube</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
@@ -105,7 +106,13 @@ function animate() {
 };
 
 //vrize add end
-</script>
+//vrize add start
+
+    window.addEventListener('vrdisplayactivate', function () {
+      renderer.vr.getDevice().requestPresent([{ source: renderer.domElement }])    
+    });
+    
+//vrize add end</script>
 
 	
 
