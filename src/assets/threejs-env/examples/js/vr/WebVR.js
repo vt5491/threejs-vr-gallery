@@ -92,6 +92,15 @@ var WEBVR = {
 				button.textContent = event.display.isPresenting ? 'EXIT VR' : 'ENTER VR';
 
 			}, false );
+			//vt add
+			window.addEventListener( 'vrdisplayactivate', function ( event ) {
+
+				// button.textContent = event.display.isPresenting ? 'EXIT VR' : 'ENTER VR';
+				console.log(`vt:WebVR: now driving vrdisplayactivate`);
+				event.display.requestPresent([{ source: renderer.domElement }]);
+
+			}, false );
+			//vt end
 
 			navigator.getVRDisplays()
 				.then( function ( displays ) {

@@ -11,7 +11,13 @@ var  KEYCODE_TO_CODE = {
   '87': 'KeyW',
   '65': 'KeyA',
   '83': 'KeyS',
-  '68': 'KeyD'
+  '68': 'KeyD',
+  //vt add
+  '78': 'KeyN',
+  '80': 'KeyP',
+  '88': 'KeyX',
+  '90': 'KeyZ'
+  //vt end
 }
 
 // var registerComponent = _dereq_('../core/component').registerComponent;
@@ -224,11 +230,11 @@ AFRAME.registerComponent('wasd-plus-controls', {
       if (keys.KeyS || keys.ArrowDown) { velocity[wsAxis] += wsSign * acceleration * delta; }
     }
     //vt add
-    if (keys.KeyP || keys.KeyN) {
+    if (keys.KeyP || keys.KeyN || keys.KeyX || keys.KeyZ) {
       // console.log(`aframeMaster: you pressed p or n key: velocity[pnAxis]=${velocity[pnAxis]}`);
       // pnSign = data.wsInverted ? -1 : 1;
-      if (keys.KeyN ) { velocity[pnAxis] -= pnSign * acceleration * delta; }
-      if (keys.KeyP ) { velocity[pnAxis] += pnSign * acceleration * delta; }
+      if (keys.KeyN || keys.KeyZ ) { velocity[pnAxis] -= pnSign * acceleration * delta; }
+      if (keys.KeyP || keys.KeyX ) { velocity[pnAxis] += pnSign * acceleration * delta; }
       // console.log(`aframeMaster: velocity[pnAxis]=${velocity[pnAxis]}`);
     }
     if (keys.KeyQ || keys.KeyE) {
@@ -248,6 +254,8 @@ AFRAME.registerComponent('wasd-plus-controls', {
 			//this.el.setAttribute('rotation', rotation);
 		}
     //vt end
+    //vt-2 add
+    //vt-2 end
   },
 
 getMovementVector: (function () {

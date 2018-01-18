@@ -1,11 +1,13 @@
 <a-scene id="link-select-scene">
   <a-assets>
     <img id="cokeThumbnail" src="assets/img/coke-label.jpg">
-    <a-asset-item id="cubeExample"
-      src="assets/threejs-env/examples/vrize_webgl_geometry_cube.html"></a-asset-item>
+    <img id="animationClothThumb" src="assets/img/animation_cloth_thumb.png">
+    <img id="webglGeometryCubeThumb" src="assets/img/webgl_geometry_cube_thumb.png">
+    <img id="webglGeometriesThumb" src="assets/img/webgl_geometries_thumb.png">
   </a-assets>
-  <a-entity id="dolly" position="0 0 3" wasd-controls>
-    <a-camera near="0.1" user-height="0" position="0 0 0" id="camera" ></a-camera>
+  <!-- <a-entity id="dolly" position="0 0 3" wasd-controls> -->
+  <a-entity id="dolly" position="0 0 3" wasd-plus-controls>
+    <a-camera near="0.1" user-height="0" position="0 0 0" id="camera" wasd-controls-enabled="false"></a-camera>
     <!-- <a-entity hand-controls="left" position="-0.1 -0.2 0" ></a-entity> -->
     <a-entity oculus-touch-controls="hand: left" position="-0.1 -0.2 0"></a-entity>
     <!-- <a-entity hand-controls="right" position="0.1 -0.2 0"></a-entity> -->
@@ -22,9 +24,11 @@
     image="#cokeThumbnail" position="0 0 0"></a-link> -->
   <!-- <a-link href="http://192.168.50.91:8000/examples/vrize_webgl_geometry_cube.html" title="Test"
     image="#cokeThumbnail" position="0 0 0"></a-link> -->
-  <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html" title="cube"
-    image="#cokeThumbnail" position="-2 0 0"></a-link>
-  <a-link href="assets/threejs-env/examples/vrize_webgl_geometries.html" title="geometries"
-    image="#cokeThumbnail" position="0 0 0"></a-link>
-  <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+  <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html" title="Geometry Cube"
+    image="#webglGeometryCubeThumb" position="-2 0 0"></a-link>
+  <a-link href="assets/threejs-env/examples/vrize_webgl_geometries.html" title="Geometries"
+    image="#webglGeometriesThumb" position="0 0 0"></a-link>
+  <a-link href="assets/threejs-env/examples/vrize_webgl_animation_cloth.html" title="Animation Cloth"
+    image="#animationClothThumb" position="2 0 0"></a-link>
+  <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
 </a-scene>
