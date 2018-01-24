@@ -22,7 +22,10 @@
         "styles.css"
       ],
       "scripts": [
-        "assets/libs/wasd-plus-controls.js"
+        "assets/libs/wasd-plus-controls.js",
+        "assets/libs/aframe/sticky-state.js",
+        "assets/libs/aframe/save-state.js",
+        "assets/libs/aframe/system-base.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

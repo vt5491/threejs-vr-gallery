@@ -8,6 +8,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { VrGalleryComponent } from './components/vr-gallery/vr-gallery.component';
 import { PlaneSelectComponent } from './components/plane-select/plane-select.component';
 import { LinkSelectComponent } from './components/link-select/link-select.component';
+import { StickyPosService } from './aframe/sticky-pos.service';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
@@ -30,7 +31,9 @@ const appRoutes:Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    StickyPosService,
+  ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
