@@ -52,6 +52,8 @@ export class VrGalDbService {
   // getPath2() : any {
     var promise;
 
+    //TODO work this out.  It can prevent the project from compiling
+    /*
     promise = new Promise((resolve, reject) => {
       this.http.get('http://localhost:8080').subscribe(
         (data) => {
@@ -66,6 +68,7 @@ export class VrGalDbService {
         }
       )
     });
+    */
     // promise = new Promise( function (resolve, reject) {
     //   resolve("abc");
 
