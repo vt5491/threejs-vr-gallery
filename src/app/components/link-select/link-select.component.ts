@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StickyPosService } from '../../aframe/sticky-pos.service';
+// import { StickyPosService } from '../../aframe/sticky-pos.service';
 
 @Component({
   selector: 'app-link-select',
@@ -8,7 +8,8 @@ import { StickyPosService } from '../../aframe/sticky-pos.service';
 })
 export class LinkSelectComponent implements OnInit {
 
-  constructor(stickyPos: StickyPosService ) {
+  // constructor(stickyPos: StickyPosService ) {
+  constructor() {
   }
 
   ngOnInit() {

@@ -1,0 +1,26 @@
+<div>
+  <button (click)="btnClick()">Get VR Path</button>
+  <p>
+  Static Link with relative path:<br/>
+  <a href="../../../assets/threejs-env/examples/vrize_webgl_geometry_cube.html">geometry cube</a>
+  <p>
+  Static Link with absolute path:<br/>
+  <a href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html">geometry cube</a>
+  <p>
+  <button (click)="addLink()">add aframe a-link</button>
+</div>
+<div id="af-scene">
+<a-scene id="sb-scene">
+  <a-assets>
+    <img id="webglGeometryCubeThumb" src="assets/img/webgl_geometry_cube_thumb.png">
+  </a-assets>
+  <a-entity id="dolly" position="0 0 8" wasd-plus-controls>
+    <a-camera near="0.1" user-height="0" position="0 0 0" id="camera" wasd-controls-enabled="false"></a-camera>
+    <a-entity oculus-touch-controls="hand: left" position="-0.1 -0.2 0"></a-entity>
+    <a-entity laser-controls="hand: right" position="0.1 -0.2 0"></a-entity>
+  </a-entity>
+  <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html" title="Geometry Cube"
+image="#webglGeometryCubeThumb" position="-3 0 0"></a-link>
+
+</a-scene>
+</div>
