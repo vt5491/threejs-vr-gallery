@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { NgModule } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { LinkSelectComponent } from './components/link-select/link-select.compon
 // import { StickyPosService } from './aframe/sticky-pos.service';
 import { VrGalDbService } from './services/vr-gal-db.service';
 import { SbComponent } from './components/sb/sb.component';
+import { QuerySelectComponent } from './components/query-select/query-select.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
@@ -19,6 +22,7 @@ const appRoutes:Routes = [
  {path: 'plane-select', component: PlaneSelectComponent},
  {path: 'link-select', component: LinkSelectComponent},
  {path: 'sb', component: SbComponent},
+ {path: 'query-select', component: QuerySelectComponent},
 //  {path: 'g1', url: 'http://www.google.com'},
 //  {path: 'g1', redirectTo: 'http://www.google.com'},
 // {url: 'www.google.com'}
@@ -30,12 +34,16 @@ const appRoutes:Routes = [
     VrGalleryComponent,
     PlaneSelectComponent,
     LinkSelectComponent,
-    SbComponent
+    SbComponent,
+    QuerySelectComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    // ReactiveFormsModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [
     // StickyPosService,
