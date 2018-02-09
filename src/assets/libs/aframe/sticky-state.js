@@ -9,6 +9,7 @@ AFRAME.registerComponent('sticky-state', {
     // let base = document.querySelector('a-scene').systems['system-base'];
     let scene = this.el.sceneEl
     let base = scene.systems['system-base'];
+    // let utils = scene.systems['system-utils'];
     // debugger;
     console.log(`base.data.appPrefix=${base.data.appPrefix}`);
     // let appPrefix = 'VRGAL';

@@ -15,6 +15,7 @@ import { LinkSelectComponent } from './components/link-select/link-select.compon
 import { VrGalDbService } from './services/vr-gal-db.service';
 import { SbComponent } from './components/sb/sb.component';
 import { QuerySelectComponent } from './components/query-select/query-select.component';
+import { FullMontySceneComponent } from './components/full-monty-scene/full-monty-scene.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
@@ -23,6 +24,7 @@ const appRoutes:Routes = [
  {path: 'link-select', component: LinkSelectComponent},
  {path: 'sb', component: SbComponent},
  {path: 'query-select', component: QuerySelectComponent},
+ {path: 'full-monty-scene', component: FullMontySceneComponent},
 //  {path: 'g1', url: 'http://www.google.com'},
 //  {path: 'g1', redirectTo: 'http://www.google.com'},
 // {url: 'www.google.com'}
@@ -35,7 +37,8 @@ const appRoutes:Routes = [
     PlaneSelectComponent,
     LinkSelectComponent,
     SbComponent,
-    QuerySelectComponent
+    QuerySelectComponent,
+    FullMontySceneComponent
   ],
   imports: [
     BrowserModule,
