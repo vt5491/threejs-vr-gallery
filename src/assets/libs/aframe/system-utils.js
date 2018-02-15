@@ -10,7 +10,10 @@ AFRAME.registerSystem('system-utils', {
     // let appPrefixLc = String.prototype.toLocaleLowerCase(base.data.appPrefix);
     let appPrefixLc = 'vrgal';
     console.log(`system-utils:prefix=${appPrefixLc}`);
-    window.addEventListener(appPrefixLc + 'addexample', this.onAddExample);
+    // window.addEventListener(appPrefixLc + 'addexample', this.onAddExample);
+    let sceneEl = this.el
+    sceneEl.addEventListener(appPrefixLc + 'addexample', this.onAddExample);
+    window.addEventListener(appPrefixLc + '_' + 'createlink', this.createLink);
   },
   onVtTestEvt: function () {
     console.log(`system-utils.onVtTestEvt: now in vttestevt handler`);
@@ -27,6 +30,27 @@ AFRAME.registerSystem('system-utils', {
     linkEl.setAttribute('position', {x: -3, y: 0, z: 0});
     linkEl.setAttribute('title', 'Dynamic Link');
     linkEl.setAttribute('href', "assets/threejs-env/examples/vrize_webgl_geometry_cube.html");
+    linkParentEl.appendChild(linkEl);
+  },
+  // This is essential 'onAddExample' with a different name
+  // createLink: function (url, pos, title) {
+  createLink: function (evt) {
+    // console.log(`system-utils.createLink: url=${url}, pos=${pos}, title=${title}`)
+    // console.log(`system-utils.createLink: name=${evt.target.vrgal_createlink_name}`)
+    let href = evt.target['vrgal_createlink'].href
+    let pos = evt.target['vrgal_createlink'].pos
+    let title = evt.target['vrgal_createlink'].title
+    console.log(`system-utils.createLink: href=${href}`)
+
+    let linkParentEl = document.querySelector('#links');
+    let linkEl = document.createElement('a-link');
+    //
+    linkEl.setAttribute('position', pos);
+    linkEl.setAttribute('title', title);
+    // linkEl.setAttribute('position', {x: -3, y: 0, z: 0});
+    // linkEl.setAttribute('title', 'Dynamic Link');
+    linkEl.setAttribute('href', href);
+    //
     linkParentEl.appendChild(linkEl);
   }
 });

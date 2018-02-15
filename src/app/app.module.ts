@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { BaseService } from './services/base.service'
+import { UtilsService } from './services/utils.service'
+import {} from '../services/base.service'
+
 
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -16,6 +20,8 @@ import { VrGalDbService } from './services/vr-gal-db.service';
 import { SbComponent } from './components/sb/sb.component';
 import { QuerySelectComponent } from './components/query-select/query-select.component';
 import { FullMontySceneComponent } from './components/full-monty-scene/full-monty-scene.component';
+import { ResultsSceneComponent } from './components/results-scene/results-scene.component';
+import { QuerySceneComponent } from './components/query-scene/query-scene.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
@@ -25,6 +31,8 @@ const appRoutes:Routes = [
  {path: 'sb', component: SbComponent},
  {path: 'query-select', component: QuerySelectComponent},
  {path: 'full-monty-scene', component: FullMontySceneComponent},
+ {path: 'results-scene', component: ResultsSceneComponent},
+ {path: 'query-scene', component: QuerySceneComponent},
 //  {path: 'g1', url: 'http://www.google.com'},
 //  {path: 'g1', redirectTo: 'http://www.google.com'},
 // {url: 'www.google.com'}
@@ -38,7 +46,9 @@ const appRoutes:Routes = [
     LinkSelectComponent,
     SbComponent,
     QuerySelectComponent,
-    FullMontySceneComponent
+    FullMontySceneComponent,
+    ResultsSceneComponent,
+    QuerySceneComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +60,8 @@ const appRoutes:Routes = [
   ],
   providers: [
     // StickyPosService,
+    BaseService,
+    UtilsService,
     VrGalDbService,
   ],
   bootstrap: [AppComponent],
