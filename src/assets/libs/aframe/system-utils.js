@@ -37,9 +37,13 @@ AFRAME.registerSystem('system-utils', {
   createLink: function (evt) {
     // console.log(`system-utils.createLink: url=${url}, pos=${pos}, title=${title}`)
     // console.log(`system-utils.createLink: name=${evt.target.vrgal_createlink_name}`)
-    let href = evt.target['vrgal_createlink'].href
-    let pos = evt.target['vrgal_createlink'].pos
-    let title = evt.target['vrgal_createlink'].title
+    console.log(`system-utils.createLink: entered, evt.detail.title=${evt.detail.title}`);
+    // let href = evt.target['vrgal_createlink'].href
+    // let pos = evt.target['vrgal_createlink'].pos
+    // let title = evt.target['vrgal_createlink'].title
+    let href = evt.detail.href
+    let pos = evt.detail.pos
+    let title = evt.detail.title
     console.log(`system-utils.createLink: href=${href}`)
 
     let linkParentEl = document.querySelector('#links');

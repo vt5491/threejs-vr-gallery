@@ -22,6 +22,7 @@ import { QuerySelectComponent } from './components/query-select/query-select.com
 import { FullMontySceneComponent } from './components/full-monty-scene/full-monty-scene.component';
 import { ResultsSceneComponent } from './components/results-scene/results-scene.component';
 import { QuerySceneComponent } from './components/query-scene/query-scene.component';
+import { BaseComponent } from './components/base/base.component';
 
 const appRoutes:Routes = [
  {path: '', component: VrGalleryComponent},
@@ -48,7 +49,8 @@ const appRoutes:Routes = [
     QuerySelectComponent,
     FullMontySceneComponent,
     ResultsSceneComponent,
-    QuerySceneComponent
+    QuerySceneComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
