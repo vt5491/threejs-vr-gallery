@@ -120,6 +120,8 @@ export class QuerySelectComponent implements OnInit {
 
   }
 
+  //TODO: Better handle the situation where the service is not running.  Right now, if the server
+  // has no network connetection you get no html response, and an esoteric error message on the console.
   queryAll() {
     this.expectedResultCnt = 4
 

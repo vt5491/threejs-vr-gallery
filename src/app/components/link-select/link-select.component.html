@@ -28,9 +28,12 @@
     <!-- <a-entity hand-controls="left" position="-0.1 -0.2 0" ></a-entity> -->
     <a-entity oculus-touch-controls="hand: left" position="-0.1 -0.2 0"></a-entity>
     <!-- <a-entity hand-controls="right" position="0.1 -0.2 0"></a-entity> -->
-    <a-entity laser-controls="hand: right" position="0.1 -0.2 0"></a-entity>
+    <a-entity laser-controls="hand: right" position="0.1 -0.2 0" raycaster="far: 5000"></a-entity>
   </a-entity>
   <a-entity save-state>
+    <!--  row 0 (sandbox)-->
+    <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube_ct2.html" title="Geometry Cube ct2"
+    image="#webglGeometryCubeThumb" position="0 4 0"></a-link>
     <!-- row 1 -->
     <a-link href="assets/threejs-env/examples/vrize_webgl_geometry_cube.html" title="Geometry Cube"
     image="#webglGeometryCubeThumb" position="-3 0 0"></a-link>

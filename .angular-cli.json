@@ -26,7 +26,8 @@
         "assets/libs/aframe/sticky-state.js",
         "assets/libs/aframe/save-state.js",
         "assets/libs/aframe/system-base.js",
-        "assets/libs/aframe/system-utils.js"
+        "assets/libs/aframe/system-utils.js",
+        "assets/libs/aframe/laser-controls-vt.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

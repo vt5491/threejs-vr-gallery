@@ -37,7 +37,7 @@ export class SbComponent implements OnInit {
   addLink() {
     let insertNode = document.querySelector('a-scene');
     let aLink = document.createElement('a-link');
-    aLink.setAttribute('href','assets/threejs-env/examples/vrize_webgl_geometry_cube.html');
+    aLink.setAttribute('href','assets/threejs-env/examples/vrize_webgl_geometry_cube_af.html');
     // aLink.title = "cg-dynamic";
     aLink.setAttribute('title',"cg-dynamic");
     // aLink.image="#webglGeometryCubeThumb";
