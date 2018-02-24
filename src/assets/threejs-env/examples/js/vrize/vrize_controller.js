@@ -48,6 +48,7 @@ window.addEventListener( 'vr controller connected', function( event ){
 	//  It’s really a THREE.Object3D so you can just add it to your scene:
 
 	var controller = event.detail
+  console.log(`controller.style=${controller.style}`);
 	// scene.add( controller )
   //vt add
   // controller.position.y = 400;
@@ -171,11 +172,19 @@ window.addEventListener( 'vr controller connected', function( event ){
     triggering = true;
     checkForGrabbing();
     console.log(`vrize_controller: trigger press began detected`);
+    if (controller.style === 'vive') {
+      grabbing = true;
+      grabStart();
+    }
 	})
 	controller.addEventListener( 'trigger press ended', function( event ){
     triggering = false;
     checkForGrabbing();
     console.log(`vrize_controller: trigger press ended detected`);
+    if (controller.style === 'vive') {
+      grabbing = false;
+      grabEnd();
+    }
 	})
 	controller.addEventListener( 'A press began', function( event ){
     aButtonPressing = true;
@@ -187,8 +196,14 @@ window.addEventListener( 'vr controller connected', function( event ){
     checkForGrabbing();
     console.log(`vrize_controller: A press ended detected`);
 	})
+  // oculus "go back to prior page"
 	controller.addEventListener( 'thumbstick press began', function( event ){
     console.log(`vrize_controller: thumbstick press began detected`);
+    window.history.back();
+	})
+  // vive "go back to prior page"
+	controller.addEventListener( 'menu press began', function( event ){
+    console.log(`vrize_controller: menu press began detected`);
     window.history.back();
 	})
 

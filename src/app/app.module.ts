@@ -21,7 +21,7 @@ import { SbComponent } from './components/sb/sb.component';
 import { QuerySelectComponent } from './components/query-select/query-select.component';
 import { FullMontySceneComponent } from './components/full-monty-scene/full-monty-scene.component';
 import { ResultsSceneComponent } from './components/results-scene/results-scene.component';
-import { QuerySceneComponent } from './components/query-scene/query-scene.component';
+// import { QuerySceneComponent } from './components/query-scene/query-scene.component';
 import { BaseComponent } from './components/base/base.component';
 
 const appRoutes:Routes = [
@@ -33,7 +33,7 @@ const appRoutes:Routes = [
  {path: 'query-select', component: QuerySelectComponent},
  {path: 'full-monty-scene', component: FullMontySceneComponent},
  {path: 'results-scene', component: ResultsSceneComponent},
- {path: 'query-scene', component: QuerySceneComponent},
+ // {path: 'query-scene', component: QuerySceneComponent},
 //  {path: 'g1', url: 'http://www.google.com'},
 //  {path: 'g1', redirectTo: 'http://www.google.com'},
 // {url: 'www.google.com'}
@@ -49,7 +49,7 @@ const appRoutes:Routes = [
     QuerySelectComponent,
     FullMontySceneComponent,
     ResultsSceneComponent,
-    QuerySceneComponent,
+    // QuerySceneComponent,
     BaseComponent
   ],
   imports: [
