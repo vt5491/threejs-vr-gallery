@@ -10,6 +10,9 @@ export class LinkSelectComponent implements OnInit {
 
   // constructor(stickyPos: StickyPosService ) {
   constructor() {
+    console.log(`LinkSelectComponent.ctor: entered`);
+    
+    debugger;
   }
 
   ngOnInit() {

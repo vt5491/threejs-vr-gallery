@@ -14,6 +14,7 @@ export class SbComponent implements OnInit {
   }
 
   ngOnInit() {
+    // debugger;
     let dynamicDiv = document.createElement("div");
     let a : any = document.createElement('a');
     a.href = 'assets/threejs-env/examples/vrize_webgl_geometry_cube.html';

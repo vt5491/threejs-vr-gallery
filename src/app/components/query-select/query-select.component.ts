@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+//TODO: you should be using HttpClientModule instead of Http
+//see https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service
+// import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
 import {HttpModule, Http, Response} from '@angular/http';
 import {ReactiveFormsModule, FormControl, FormsModule} from '@angular/forms';
 import {Observable} from 'rxjs';

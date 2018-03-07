@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { VrizeModule } from './modules/vrize/vrize.module';
+import { SandboxModule } from './modules/sandbox/sandbox.module';
+
 import { BaseService } from './services/base.service'
 import { UtilsService } from './services/utils.service'
 import {} from '../services/base.service'
@@ -58,7 +61,9 @@ const appRoutes:Routes = [
     HttpClientModule,
     // ReactiveFormsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    VrizeModule,
+    SandboxModule
   ],
   providers: [
     // StickyPosService,

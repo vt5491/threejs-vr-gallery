@@ -112,7 +112,8 @@ window.addEventListener( 'vr controller connected', function( event ){
   // lastDollyPos = Object.assign({}, dolly.position);
   // endControllerPos = {};
   // endControllerPos = Object.assign({}, controller.position);
-  var sf = 100;
+  // var sf = 100;
+  var sf = 200;
   var tickRun = false;
   // var sf = 1.1;
   var tickReq;
@@ -323,17 +324,57 @@ window.addEventListener( 'vr controller connected', function( event ){
   }
 
   function updateDollyPos () {
-    // dolly.position.x = (controller.position.x - firstControllerPos.x) * sf + firstDollyPos.x;
-    // dolly.position.y = (controller.position.y - firstControllerPos.y) * sf + firstDollyPos.y;
-    // dolly.position.z = (controller.position.z - firstControllerPos.z) * sf + firstDollyPos.z;
+    // let tmpController = controller.clone();
+    let tmpControllerPos = controller.position.clone();
+    // dolly.position.x = firstDollyPos.x - (controller.position.x - firstControllerPos.x) * sf;
+    // dolly.position.y = firstDollyPos.y - (controller.position.y - firstControllerPos.y) * sf;
+    // dolly.position.z = firstDollyPos.z - (controller.position.z - firstControllerPos.z) * sf;
+    // let rotObjectMatrix = new THREE.Matrix4();
+    // rotObjectMatrix.makeRotationFromQuaternion(controller.quaternion);
+    // tmpControllerPos.applyAxisAngle( new THREE.Vector3(0,1,0), dolly.rotation.y );
+    //Next we just have to apply a rotation to the quaternion using the created matrix
+    // boxme1.quaternion.setFromRotationMatrix(rotObjectMatrix);
+    // tmpControllerPos.multiply(rotObjectMatrix);
+    // dolly.position.x = firstDollyPos.x - (tmpControllerPos.x - firstControllerPos.x) * sf;
+    // dolly.position.y = firstDollyPos.y - (tmpControllerPos.y - firstControllerPos.y) * sf;
+    // dolly.position.z = firstDollyPos.z - (tmpControllerPos.z - firstControllerPos.z) * sf;
+    let yAxis = new THREE.Vector3(0,1,0);
+    let deltaVec = new THREE.Vector3();
+    deltaVec.x = (controller.position.x - firstControllerPos.x) * sf
+    deltaVec.y = (controller.position.y - firstControllerPos.y) * sf
+    deltaVec.z = (controller.position.z - firstControllerPos.z) * sf
+    deltaVec.applyAxisAngle(yAxis, dolly.rotation.y);
+    dolly.position.x = firstDollyPos.x - deltaVec.x;
+    dolly.position.y = firstDollyPos.y - deltaVec.y;
+    dolly.position.z = firstDollyPos.z - deltaVec.z;
+    // console.log(`updateDollyPos: controller.rotation.y=${controller.rotation.y}`);
+    // dolly.position.x = (firstDollyPos.x - (controller.position.x - firstControllerPos.x) * sf) * Math.cos(controller.rotation.y);
+    // dolly.position.y = (firstDollyPos.y - (controller.position.y - firstControllerPos.y) * sf) * Math.sin(controller.rotation.y);
+    // dolly.position.x = firstDollyPos.x -
+    //   ( (controller.position.x - firstControllerPos.x) * Math.cos(controller.rotation.y)) * sf;
+    // dolly.position.y = firstDollyPos.y -
+    //   ( (controller.position.y - firstControllerPos.y) * Math.sin(controller.rotation.y)) * sf;
+    // dolly.position.x = firstDollyPos.x -
+    //   ( controller.position.x  * Math.cos(controller.rotation.y) - firstControllerPos.x) * sf;
+    // dolly.position.y = firstDollyPos.y -
+    //   ( controller.position.y  * Math.sin(controller.rotation.y) - firstControllerPos.y) * sf;
+    // let theta = controller.rotation.y -  0.0 * Math.PI / 1.0;
+    // let theta = dolly.rotation.y -  1.0 * Math.PI / 1.0;
+    // let deltaX = controller.position.x - firstControllerPos.x;
+    // let deltaZ = controller.position.z - firstControllerPos.z;
+    // let r = Math.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+    // console.log(`r=${r}`);
+    // dolly.position.x = firstDollyPos.x - r * Math.cos(theta) * sf;
+    // dolly.position.z = firstDollyPos.z - r * Math.sin(theta) * sf;
+    // let deltaX = (controller.position.x - firstControllerPos.x) * Math.cos(theta) * sf * 1.0;
+    // let deltaZ = (controller.position.z - firstControllerPos.z) * Math.sin(theta) * sf * 1.0;
+    // let deltaX = (controller.position.x * Math.cos(theta) - firstControllerPos.x) * sf * 1.5;
+    // let deltaZ = (controller.position.z * Math.sin(theta) - firstControllerPos.z) * sf * 1.5;
 
-    dolly.position.x = firstDollyPos.x - (controller.position.x - firstControllerPos.x) * sf;
-    dolly.position.y = firstDollyPos.y - (controller.position.y - firstControllerPos.y) * sf;
-    dolly.position.z = firstDollyPos.z - (controller.position.z - firstControllerPos.z) * sf;
+    // dolly.position.x = firstDollyPos.x - deltaX;
+    // dolly.position.z = firstDollyPos.z - deltaZ;
+      // (deltaX * Math.cos(theta) + deltaY * Math.sin(theta));
 
-    // dolly.position.x += firstDollyPos.x - lastDollyPos.x;
-    // dolly.position.y += firstDollyPos.y - lastDollyPos.y;
-    // dolly.position.z += firstDollyPos.z - lastDollyPos.z;
 
   }
 
